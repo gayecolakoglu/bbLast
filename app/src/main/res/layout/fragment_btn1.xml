@@ -3,13 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.NightFragment">
+    tools:context=".Fragments.Btn1Fragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/nightTxt"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="night" />
+        android:text="@string/hello_blank_fragment" />
 
 </FrameLayout>

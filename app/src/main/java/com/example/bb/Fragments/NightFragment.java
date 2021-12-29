@@ -1,4 +1,4 @@
-package com.example.bb;
+package com.example.bb.Fragments;
 
 import android.os.Bundle;
 
@@ -8,13 +8,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class ProductsFragment extends Fragment {
+import com.example.bb.R;
+
+
+public class NightFragment extends Fragment {
     View view;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_products, container, false);
+        view= inflater.inflate(R.layout.fragment_night, container, false);
         return view;
     }
 }
