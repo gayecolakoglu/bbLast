@@ -16,30 +16,66 @@ import com.example.bb.R;
 public class ProductsFragment extends Fragment {
     View view;
 
+    ImageButton btn1;
+    ImageButton btn2;
+    ImageButton btn3;
+    Button ingredients;
+    Button comments;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_products, container, false);
-        ImageButton btn1 = (ImageButton) view.findViewById(R.id.btn1);
-        ImageButton btn2 = (ImageButton) view.findViewById(R.id.btn2);
-        ImageButton btn3 = (ImageButton) view.findViewById(R.id.btn3);
+        btn1 = (ImageButton) view.findViewById(R.id.btn1);
+        btn2 = (ImageButton) view.findViewById(R.id.btn2);
+        btn3 = (ImageButton) view.findViewById(R.id.btn3);
+        ingredients = view.findViewById(R.id.ingredients);
+        comments = view.findViewById(R.id.comments);
+
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                btn2.setVisibility(View.GONE);
+                btn3.setVisibility(View.GONE);
                 replaceFragment(new Btn1Fragment());
-            }
-        });btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                replaceFragment(new Btn2Fragment());
-            }
-        });btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                replaceFragment(new Btn3Fragment());
+                ingredients.setVisibility(View.VISIBLE);
+                comments.setVisibility(View.VISIBLE);
             }
         });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btn1.setVisibility(View.GONE);
+                btn3.setVisibility(View.GONE);
+                replaceFragment(new Btn1Fragment());
+                ingredients.setVisibility(View.VISIBLE);
+                comments.setVisibility(View.VISIBLE);
+            }
+        });
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btn2.setVisibility(View.GONE);
+                btn1.setVisibility(View.GONE);
+                replaceFragment(new Btn1Fragment());
+                ingredients.setVisibility(View.VISIBLE);
+                comments.setVisibility(View.VISIBLE);
+            }
+        });
+
+        ingredients.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                replaceFragment(new IngredientsFragment());
+            }
+        });comments.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                replaceFragment(new CommentFragment());
+            }
+        });
+
         return view;
     }
 

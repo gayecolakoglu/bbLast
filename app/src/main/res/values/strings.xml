@@ -6,4 +6,14 @@
     <string name="title_signout">Sign Out</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cleanser">CLEANSER - A facial cleanser is a skincare product used to remove make-up, dead skin cells, oil, dirt, and other types of pollutants from the skin, helping to keep pores clear and prevent skin conditions such as acne.
+        Finding the best cleanser can be tough given there are so many options. Knowing the differences between them will help you choose the best products for your skin.
+
+        Gel cleansers are clear with a gel-like consistency. Many have deep-cleaning and exfoliating properties—ideal for oily, acne-prone skin.
+
+        Cream cleansers are usually thicker and can be moisturizing, cleansing without stripping skin of its natural oils—ideal for dry or sensitive skin.
+
+        Foam cleansers are lightweight solutions creating a foamy lather when dispensed from a pump package. Foam cleansers are pleasant to use and remove excess oil as effectively as gel cleansers—ideal for combination skin.</string>
+    <string name="moisturizer">Hello blank fragment</string>
+    <string name="sunProtection">Hello blank fragment</string>
 </resources>

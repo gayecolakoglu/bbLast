@@ -6,10 +6,21 @@
     tools:context=".Fragments.RoutinesFragment"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/txtRoutines"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Routines"
+        android:textSize="24dp"
+        ></TextView>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center">
 
         <Button
             android:id="@+id/morning"
@@ -22,13 +33,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Night" />
+        <Button
+            android:id="@+id/addStepBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Step" />
 
     </LinearLayout>
 
+
+
     <FrameLayout
+        android:id="@+id/routines_frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
-        android:id="@+id/routines_frameLayout">
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="20dp">
+
     </FrameLayout>
 
 

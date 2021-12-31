@@ -1,5 +1,6 @@
 package com.example.bb.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,8 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.bb.AddStepActivity;
 import com.example.bb.Fragments.MorningFragment;
 import com.example.bb.Fragments.NightFragment;
+import com.example.bb.MainActivity;
 import com.example.bb.R;
 
 public class RoutinesFragment extends Fragment {
@@ -23,17 +26,29 @@ public class RoutinesFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_routines, container, false);
+
         Button morning = (Button) view.findViewById(R.id.morning);
         Button night = (Button) view.findViewById(R.id.night);
+        Button addStepBtn = (Button) view.findViewById(R.id.addStepBtn);
+
         morning.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 replaceFragment(new MorningFragment());
             }
-        });night.setOnClickListener(new View.OnClickListener() {
+        });
+        night.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 replaceFragment(new NightFragment());
+            }
+        });
+
+        addStepBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),AddStepActivity.class);
+                startActivity(intent);
             }
         });
         return view;
