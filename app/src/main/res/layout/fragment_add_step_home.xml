@@ -13,6 +13,7 @@
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="Step Name"
+        app:layout_constraintBottom_toTopOf="@id/cleanser"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,6 +55,7 @@
         android:inputType="textMultiLine"
         android:minHeight="48dp"
         android:text="moisturizer"
+        app:layout_constraintBottom_toTopOf="@id/addStepHome_frameLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,7 +88,9 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sunProtection" />
+        app:layout_constraintTop_toBottomOf="@id/moisturizer"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

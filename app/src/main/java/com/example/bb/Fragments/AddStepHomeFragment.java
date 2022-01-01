@@ -13,26 +13,21 @@ import android.widget.Button;
 import com.example.bb.R;
 
 public class AddStepHomeFragment extends Fragment {
+
+
+
     View view;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_add_step_home, container, false);
 
         Button btnCleanser = (Button)view.findViewById(R.id.cleanser);
         Button btnMoisturizer = (Button)view.findViewById(R.id.moisturizer);
         Button btnSunProtection = (Button)view.findViewById(R.id.sunProtection);
-
-        btnCleanser.setOnClickListener((View.OnClickListener) this);
-        btnMoisturizer.setOnClickListener((View.OnClickListener) this);
-        btnSunProtection.setOnClickListener((View.OnClickListener) this);
-
-
-
-
-
-
+        
 
         btnCleanser.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,4 +56,5 @@ public class AddStepHomeFragment extends Fragment {
 
         return view;
     }
+
 }
