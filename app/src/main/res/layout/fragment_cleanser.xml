@@ -29,6 +29,40 @@
         android:text="for Cleanser step"
         android:textSize="16sp" />
 
+
+    <LinearLayout
+        android:id="@+id/productsCleanserImagesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/cleanser1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/celenes1"
+            android:visibility="visible"/>
+
+        <ImageButton
+            android:id="@+id/cleanser2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/cerave"
+            android:visibility="visible"/>
+
+        <ImageButton
+            android:id="@+id/cleanser3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/simple"
+            android:visibility="visible"/>
+    </LinearLayout>
+
     <Button
         android:id="@+id/btnForward"
         android:layout_width="wrap_content"

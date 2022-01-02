@@ -28,6 +28,36 @@
         android:text="for Sun Protection step"
         android:textSize="16sp" />
 
+    <LinearLayout
+        android:id="@+id/productsSunImagesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/sun1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/laroche" />
+
+        <ImageButton
+            android:id="@+id/sun2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/sun1" />
+
+        <ImageButton
+            android:id="@+id/sun3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/sun2" />
+    </LinearLayout>
+
     <Button
         android:id="@+id/btnForward"
         android:layout_width="wrap_content"
