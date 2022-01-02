@@ -33,6 +33,7 @@ public class AddStepHomeFragment extends Fragment {
         btnCleanser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //ilgili ürünleri databaseden çekip fragmenta atmalı
                 replaceFragment(new CleanserFragment());
                 btnCleanser.setVisibility(View.GONE);
                 btnMoisturizer.setVisibility(View.GONE);

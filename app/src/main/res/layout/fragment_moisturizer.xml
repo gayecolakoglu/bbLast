@@ -7,8 +7,34 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Moisturizer" />
+        android:id="@+id/txtCleanser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:text="Select a Product"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/txtCleanser2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginRight="30dp"
+        android:text="for Moisturizer step"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnForward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="60dp"
+        android:text="Button" />
 
 </FrameLayout>
