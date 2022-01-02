@@ -26,7 +26,7 @@ public class CleanserFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                //Seçilen ürünü database kaydetmeli ve Routines fragment kısmında display etmeli
+                //Seçilen ürünü gündüz ya da gece rutinine, database kaydetmeli.
 
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.addStepHome_frameLayout,new AddStepHomeFragment());

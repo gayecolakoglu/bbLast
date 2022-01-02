@@ -26,6 +26,7 @@ public class AddStepHomeFragment extends Fragment {
         Button btnCleanser = (Button)view.findViewById(R.id.cleanser);
         Button btnMoisturizer = (Button)view.findViewById(R.id.moisturizer);
         Button btnSunProtection = (Button)view.findViewById(R.id.sunProtection);
+        Button btnSave = (Button)view.findViewById(R.id.btnSave);
 
         TextView txt= (TextView) view.findViewById(R.id.stepName);
 
@@ -38,6 +39,7 @@ public class AddStepHomeFragment extends Fragment {
                 btnCleanser.setVisibility(View.GONE);
                 btnMoisturizer.setVisibility(View.GONE);
                 btnSunProtection.setVisibility(View.GONE);
+                btnSave.setVisibility(View.GONE);
                 txt.setVisibility(View.GONE);
             }
         });
@@ -48,6 +50,7 @@ public class AddStepHomeFragment extends Fragment {
                 btnMoisturizer.setVisibility(View.GONE);
                 btnCleanser.setVisibility(View.GONE);
                 btnSunProtection.setVisibility(View.GONE);
+                btnSave.setVisibility(View.GONE);
                 txt.setVisibility(View.GONE);
             }
         });
@@ -58,7 +61,16 @@ public class AddStepHomeFragment extends Fragment {
                 btnCleanser.setVisibility(View.GONE);
                 btnMoisturizer.setVisibility(View.GONE);
                 btnSunProtection.setVisibility(View.GONE);
+                btnSave.setVisibility(View.GONE);
                 txt.setVisibility(View.GONE);
+            }
+        });
+
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Save tıkladığında databaseden işinin gün ve gece rutin ürünlerini çekip Routines fragmentına at.
+                replaceFragment(new RoutinesFragment());
             }
         });
 

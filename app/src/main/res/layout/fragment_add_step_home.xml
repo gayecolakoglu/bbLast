@@ -10,7 +10,7 @@
         android:id="@+id/addStepHome_frameLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/btnSave"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/moisturizer" />
@@ -19,14 +19,19 @@
         android:id="@+id/stepName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="30dp"
+        android:ems="10"
         android:gravity="center"
         android:text="Step Name"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@id/cleanser"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
 
     <Button
         android:id="@+id/cleanser"
@@ -42,7 +47,7 @@
         android:inputType="textMultiLine"
         android:minHeight="48dp"
         android:text="@string/cleanser"
-        android:textSize="12sp"
+        android:textSize="10sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@id/sunProtection"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,6 +94,17 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cleanser" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addStepHome_frameLayout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
