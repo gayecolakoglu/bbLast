@@ -9,12 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.bb.R;
 
 public class AddStepHomeFragment extends Fragment {
-
-
 
     View view;
     @Override
@@ -27,34 +26,50 @@ public class AddStepHomeFragment extends Fragment {
         Button btnCleanser = (Button)view.findViewById(R.id.cleanser);
         Button btnMoisturizer = (Button)view.findViewById(R.id.moisturizer);
         Button btnSunProtection = (Button)view.findViewById(R.id.sunProtection);
-        
+
+        TextView txt= (TextView) view.findViewById(R.id.stepName);
+
 
         btnCleanser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.addStepHome_frameLayout, new CleanserFragment());
-                fr.commit();
+                replaceFragment(new CleanserFragment());
+                btnCleanser.setVisibility(View.GONE);
+                btnMoisturizer.setVisibility(View.GONE);
+                btnSunProtection.setVisibility(View.GONE);
+                txt.setVisibility(View.GONE);
             }
         });
         btnMoisturizer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.addStepHome_frameLayout, new MoisturizerFragment());
-                fr.commit();
+                replaceFragment(new MoisturizerFragment());
+                btnMoisturizer.setVisibility(View.GONE);
+                btnCleanser.setVisibility(View.GONE);
+                btnSunProtection.setVisibility(View.GONE);
+                txt.setVisibility(View.GONE);
             }
         });
         btnSunProtection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.addStepHome_frameLayout, new SunProtectionFragment());
-                fr.commit();
+                replaceFragment(new SunProtectionFragment());
+                btnCleanser.setVisibility(View.GONE);
+                btnMoisturizer.setVisibility(View.GONE);
+                btnSunProtection.setVisibility(View.GONE);
+                txt.setVisibility(View.GONE);
             }
         });
 
         return view;
+    }
+
+
+    private void replaceFragment(Fragment fragment){
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.addStepHome_frameLayout,fragment);
+        fragmentTransaction.commit();
+
     }
 
 }

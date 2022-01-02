@@ -33,12 +33,14 @@ public class ProductsFragment extends Fragment {
         ingredients = view.findViewById(R.id.ingredients);
         comments = view.findViewById(R.id.comments);
 
+        int clickedButtonID = view.getId();
+
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 btn2.setVisibility(View.GONE);
                 btn3.setVisibility(View.GONE);
-                replaceFragment(new Btn1Fragment());
+                replaceFragment(new IngredientsFragment());
                 ingredients.setVisibility(View.VISIBLE);
                 comments.setVisibility(View.VISIBLE);
             }
@@ -48,7 +50,7 @@ public class ProductsFragment extends Fragment {
             public void onClick(View view) {
                 btn1.setVisibility(View.GONE);
                 btn3.setVisibility(View.GONE);
-                replaceFragment(new Btn1Fragment());
+                replaceFragment(new IngredientsFragment());
                 ingredients.setVisibility(View.VISIBLE);
                 comments.setVisibility(View.VISIBLE);
             }
@@ -58,7 +60,7 @@ public class ProductsFragment extends Fragment {
             public void onClick(View view) {
                 btn2.setVisibility(View.GONE);
                 btn1.setVisibility(View.GONE);
-                replaceFragment(new Btn1Fragment());
+                replaceFragment(new IngredientsFragment());
                 ingredients.setVisibility(View.VISIBLE);
                 comments.setVisibility(View.VISIBLE);
             }

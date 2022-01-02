@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "586088322730",
+    "project_id": "bellabeauty-21c78",
+    "storage_bucket": "bellabeauty-21c78.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:586088322730:android:62be5472827222efd8a2d3",
+        "android_client_info": {
+          "package_name": "com.example.bb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "586088322730-2h98i36abucph97kidurtuccjksncqkv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkzlvf9DRZ_28xS4cFHlZ_epJYh26adMU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "586088322730-2h98i36abucph97kidurtuccjksncqkv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
