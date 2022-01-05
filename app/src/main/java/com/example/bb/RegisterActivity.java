@@ -9,6 +9,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -16,10 +17,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
     Button btn2_signup;
     EditText user_name, pass_word;
     FirebaseAuth mAuth;
+
+    private Button register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,10 @@ public class RegisterActivity extends AppCompatActivity {
         pass_word=findViewById(R.id.password1);
         btn2_signup=findViewById(R.id.sign);
         mAuth=FirebaseAuth.getInstance();
+
+        register = (Button) findViewById(R.id.sign);
+        register.setOnClickListener(this);
+
         btn2_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,5 +82,15 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.sign:
+                startActivity(new Intent(this, RegisterUser.class));
+                break;
+        }
     }
 }
