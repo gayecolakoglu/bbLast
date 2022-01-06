@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 private void signOutUser() {
-                    Intent mainActivity = new Intent(new SignInActivity(),MainActivity.class);
+                    Intent mainActivity = new Intent(MainActivity.this,SignInActivity.class);
                     mainActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(mainActivity);
                     finish();
