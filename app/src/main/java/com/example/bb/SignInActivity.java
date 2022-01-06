@@ -10,45 +10,48 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class SignInActivity extends AppCompatActivity {
-    private EditText user_name, pass_word;
+    private EditText email, password;
     FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-        user_name=findViewById(R.id.email);
-        pass_word=findViewById(R.id.password);
+        email =findViewById(R.id.email_in_SignInActivity);
+        password =findViewById(R.id.password_in_SignInActivity);
         Button btn_login = findViewById(R.id.btn_login);
-        Button btn_sign = findViewById(R.id.btn_signup);
+        Button btn_register = findViewById(R.id.btn_Register_in_SignInActivity);
         mAuth=FirebaseAuth.getInstance();
         btn_login.setOnClickListener(v -> {
-            String email= user_name.getText().toString().trim();
-            String password=pass_word.getText().toString().trim();
+            String email= this.email.getText().toString().trim();
+            String password= this.password.getText().toString().trim();
+
+
             if(email.isEmpty())
             {
-                user_name.setError("Email is empty");
-                user_name.requestFocus();
+                this.email.setError("Email is empty");
+                this.email.requestFocus();
                 return;
             }
             if(!Patterns.EMAIL_ADDRESS.matcher(email).matches())
             {
-                user_name.setError("Enter the valid email");
-                user_name.requestFocus();
+                this.email.setError("Enter the valid email");
+                this.email.requestFocus();
                 return;
             }
             if(password.isEmpty())
             {
-                pass_word.setError("Password is empty");
-                pass_word.requestFocus();
+                this.password.setError("Password is empty");
+                this.password.requestFocus();
                 return;
             }
             if(password.length()<6)
             {
-                pass_word.setError("Length of password is more than 6");
-                pass_word.requestFocus();
+                this.password.setError("Length of password is more than 6");
+                this.password.requestFocus();
                 return;
             }
             mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
@@ -65,7 +68,7 @@ public class SignInActivity extends AppCompatActivity {
 
             });
         });
-        btn_sign.setOnClickListener(v -> startActivity(new Intent(SignInActivity.this,RegisterActivity.class )));
+        btn_register.setOnClickListener(v -> startActivity(new Intent(SignInActivity.this,RegisterActivity.class )));
     }
 
 }

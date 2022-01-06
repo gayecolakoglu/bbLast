@@ -1,5 +1,6 @@
 package com.example.bb;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,9 +29,9 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_register);
         mAuth = FirebaseAuth.getInstance();
 
-        editTextEmail = (EditText) findViewById(R.id.username);
-        editTextPassword = (EditText) findViewById(R.id.password1);
-        sign = (Button) findViewById(R.id.sign);
+        editTextEmail = (EditText) findViewById(R.id.email_in_RegisterActivity);
+        editTextPassword = (EditText) findViewById(R.id.password_in_RegisterActivity);
+        sign = (Button) findViewById(R.id.btnRegister_in_RegisterActivity);
         sign.setOnClickListener(this);
 
     }
@@ -38,7 +39,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.sign:
+            case R.id.btnRegister_in_RegisterActivity:
                 registerUser();
                 break;
 
@@ -62,6 +63,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
                                 Toast.makeText(RegisterUser.this, "User has been registered successfully..", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(RegisterUser.this, SignInActivity.class));
                             }else{
                                 Toast.makeText(RegisterUser.this, "Failed to registered..", Toast.LENGTH_SHORT).show();
                             }

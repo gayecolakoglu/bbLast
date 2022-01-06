@@ -18,9 +18,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
-    Button btn2_signup;
-    EditText user_name, pass_word;
+    Button btn_register;
+    EditText email, password;
     FirebaseAuth mAuth;
+    TextView haveAnAccount;
 
     private Button register;
 
@@ -28,41 +29,51 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        user_name=findViewById(R.id.username);
-        pass_word=findViewById(R.id.password1);
-        btn2_signup=findViewById(R.id.sign);
+        email =findViewById(R.id.email_in_RegisterActivity);
+        password =findViewById(R.id.password_in_RegisterActivity);
+        btn_register =findViewById(R.id.btnRegister_in_RegisterActivity);
+        haveAnAccount = findViewById(R.id.haveAnAccount);
         mAuth=FirebaseAuth.getInstance();
 
-        register = (Button) findViewById(R.id.sign);
+        register = (Button) findViewById(R.id.btnRegister_in_RegisterActivity);
         register.setOnClickListener(this);
 
-        btn2_signup.setOnClickListener(new View.OnClickListener() {
+        haveAnAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = user_name.getText().toString().trim();
-                String password= pass_word.getText().toString().trim();
+                Intent intent = new Intent(RegisterActivity.this,SignInActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btn_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = RegisterActivity.this.email.getText().toString().trim();
+                String password= RegisterActivity.this.password.getText().toString().trim();
                 if(email.isEmpty())
                 {
-                    user_name.setError("Email is empty");
-                    user_name.requestFocus();
+                    RegisterActivity.this.email.setError("Email is empty");
+                    RegisterActivity.this.email.requestFocus();
                     return;
                 }
                 if(!Patterns.EMAIL_ADDRESS.matcher(email).matches())
                 {
-                    user_name.setError("Enter the valid email address");
-                    user_name.requestFocus();
+                    RegisterActivity.this.email.setError("Enter the valid email address");
+                    RegisterActivity.this.email.requestFocus();
                     return;
                 }
                 if(password.isEmpty())
                 {
-                    pass_word.setError("Enter the password");
-                    pass_word.requestFocus();
+                    RegisterActivity.this.password.setError("Enter the password");
+                    RegisterActivity.this.password.requestFocus();
                     return;
                 }
                 if(password.length()<6)
                 {
-                    pass_word.setError("Length of the password should be more than 6");
-                    pass_word.requestFocus();
+                    RegisterActivity.this.password.setError("Length of the password should be more than 6");
+                    RegisterActivity.this.password.requestFocus();
                     return;
                 }
                 mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -71,6 +82,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                         if(task.isSuccessful())
                         {
                             Toast.makeText(RegisterActivity.this,"You are successfully Registered", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(RegisterActivity.this, SignInActivity.class));
                         }
                         else
                         {
@@ -88,9 +100,15 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.sign:
+            case R.id.btnRegister_in_RegisterActivity:
                 startActivity(new Intent(this, RegisterUser.class));
                 break;
         }
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed(); //Go previous activity.
+        return super.onSupportNavigateUp();
     }
 }
