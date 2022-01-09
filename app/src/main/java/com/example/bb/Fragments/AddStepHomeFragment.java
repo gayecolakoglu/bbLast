@@ -23,10 +23,10 @@ public class AddStepHomeFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_add_step_home, container, false);
 
-        Button btnCleanser = (Button)view.findViewById(R.id.cleanser);
-        Button btnMoisturizer = (Button)view.findViewById(R.id.moisturizer);
-        Button btnSunProtection = (Button)view.findViewById(R.id.sunProtection);
-        Button btnSave = (Button)view.findViewById(R.id.btnSave);
+        Button btnCleanser = (Button)view.findViewById(R.id.redness);
+        Button btnMoisturizer = (Button)view.findViewById(R.id.dehydrated);
+        Button btnSunProtection = (Button)view.findViewById(R.id.sensitive);
+        Button btnSave = (Button)view.findViewById(R.id.btnSave_in_SkinType);
 
         TextView txt= (TextView) view.findViewById(R.id.stepName);
 
@@ -69,7 +69,7 @@ public class AddStepHomeFragment extends Fragment {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Save tıkladığında databaseden işinin gün ve gece rutin ürünlerini çekip Routines fragmentına at.
+                // Save tıkladığında databaseden kişinin gün ve gece rutin ürünlerini çekip Routines fragmentına at.
                 replaceFragment(new RoutinesFragment());
             }
         });

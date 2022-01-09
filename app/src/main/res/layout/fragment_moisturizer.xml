@@ -6,6 +6,7 @@
     tools:context=".Fragments.MoisturizerFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <TextView
         android:id="@+id/txtCleanser"
         android:layout_width="wrap_content"
@@ -42,7 +43,8 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:scaleType="fitXY"
-            android:src="@drawable/celenes2" />
+            android:src="@drawable/celenes2"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
             android:id="@+id/moisturizer2"
@@ -57,16 +59,26 @@
             android:layout_height="100dp"
             android:scaleType="fitXY"
             android:src="@drawable/moisturizer2"/>
+
     </LinearLayout>
 
-
     <Button
-        android:id="@+id/btnForward"
+        android:id="@+id/btnForward_in_MoisturizerFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="60dp"
-        android:text="Button" />
+        android:text="Forward" />
+
+    <Button
+        android:id="@+id/btnBack_in_MoisturizerFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="60dp"
+        android:text="Back" />
+
 
 </FrameLayout>

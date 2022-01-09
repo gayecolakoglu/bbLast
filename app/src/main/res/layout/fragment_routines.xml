@@ -61,11 +61,11 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/btnBack"
+            android:id="@+id/btnBack_in_RoutinesFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:text="Button"
+            android:text="Back"
             app:layout_constraintBottom_toTopOf="@id/addStepBtn"
             app:layout_constraintStart_toStartOf="parent" />
 

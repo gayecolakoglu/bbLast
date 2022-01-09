@@ -4,7 +4,7 @@ package com.example.bb;
 public class User {
 
     //use same name in firebase
-    public String  email, password, uid;
+    public String  email, password, uid, routines;
     public User(){
     }
 
@@ -13,6 +13,7 @@ public class User {
         this.email = email;
         this.password = password;
         this.uid = uid;
+        this.routines = routines;
     }
 
     public String getUseremail() {
@@ -37,5 +38,13 @@ public class User {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public String getRoutines() {
+        return routines;
+    }
+
+    public void setRoutines(String routines) {
+        this.routines = routines;
     }
 }

@@ -1,14 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragments.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="home" />
+    <EditText
+        android:id="@+id/editText_SkinSubType"
+        android:layout_width="264dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Skin Subtype"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@id/homeFragment_frameLayout"
+        app:layout_constraintEnd_toStartOf="@id/btnSelect2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtSkinSubType" />
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/editText_SkinType"
+        android:layout_width="264dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="SkinType"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@id/txtSkinSubType"
+        app:layout_constraintEnd_toStartOf="@id/btnSelect1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtSkinType" />
+
+    <FrameLayout
+        android:id="@+id/homeFragment_frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editText_SkinSubType"
+        app:layout_constraintVertical_weight="9">
+
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/txtWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="60dp"
+        android:text=" Welcome :)"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@id/txtSkinType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtSkinType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="240dp"
+        android:text="Your skin type:"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/editText_SkinType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtWelcome" />
+
+    <TextView
+        android:id="@+id/txtSkinSubType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="210dp"
+        android:text="Your skin subtype:"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/editText_SkinSubType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtSkinType" />
+
+    <Button
+        android:id="@+id/btnSelect1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:layout_marginBottom="48dp"
+        android:text="Select"
+        app:layout_constraintBottom_toTopOf="@+id/btnSelect2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/editText_SkinType"
+        app:layout_constraintTop_toBottomOf="@+id/txtWelcome"
+        app:layout_constraintVertical_bias="0.981" />
+
+    <Button
+        android:id="@+id/btnSelect2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select"
+        app:layout_constraintBottom_toBottomOf="@+id/editText_SkinSubType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/editText_SkinSubType"
+        app:layout_constraintTop_toBottomOf="@id/btnSelect1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -35,8 +35,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         haveAnAccount = findViewById(R.id.haveAnAccount);
         mAuth=FirebaseAuth.getInstance();
 
-        register = (Button) findViewById(R.id.btnRegister_in_RegisterActivity);
-        register.setOnClickListener(this);
+        //register = (Button) findViewById(R.id.btnRegister_in_RegisterActivity);
+        //register.setOnClickListener(this);
 
         haveAnAccount.setOnClickListener(new View.OnClickListener() {
             @Override

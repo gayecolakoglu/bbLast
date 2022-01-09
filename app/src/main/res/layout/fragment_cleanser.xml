@@ -64,12 +64,21 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnForward"
+        android:id="@+id/btnForward_in_CleanserFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="60dp"
-        android:text="Button" />
+        android:text="Forward" />
+
+    <Button
+        android:id="@+id/btnBack_in_CleanserFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="60dp"
+        android:text="Back" />
 
 </FrameLayout>

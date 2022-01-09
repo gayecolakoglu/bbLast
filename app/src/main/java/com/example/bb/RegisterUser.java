@@ -21,7 +21,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
 
     private EditText editTextEmail,editTextPassword;
-    private Button sign;
+    private Button btn_register;
     private FirebaseAuth mAuth;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,8 +31,8 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
         editTextEmail = (EditText) findViewById(R.id.email_in_RegisterActivity);
         editTextPassword = (EditText) findViewById(R.id.password_in_RegisterActivity);
-        sign = (Button) findViewById(R.id.btnRegister_in_RegisterActivity);
-        sign.setOnClickListener(this);
+        btn_register = (Button) findViewById(R.id.btnRegister_in_RegisterActivity);
+        btn_register.setOnClickListener(this);
 
     }
 

@@ -1,5 +1,6 @@
 package com.example.bb.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,30 +11,26 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.bb.AddStepActivity;
+import com.example.bb.MainActivity;
 import com.example.bb.R;
 
-public class SunProtectionFragment extends Fragment {
-
+public class KnowSkincareIngredientsFragment extends Fragment {
     View view;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_sun_protection, container, false);
+        view = inflater.inflate(R.layout.fragment_know_skincare_ingredients, container, false);
 
-        Button btnForward = (Button) view.findViewById(R.id.btnForward_in_SunProtectionFragment);
-        Button btnBack = (Button) view.findViewById(R.id.btnBack_in_SunProtectionFragment);
+        Button btnContinue = (Button) view.findViewById(R.id.btnContinue_in_KnowIngredients);
+        Button btnBack = (Button) view.findViewById(R.id.btnBack_in_KnowIngredients);
 
-        btnForward.setOnClickListener(new View.OnClickListener() {
+        btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                //Seçilen ürünü database kaydetmeli ve Routines fragment kısmında display etmeli
-
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.addStepHome_frameLayout,new AddStepHomeFragment());
-                fragmentTransaction.commit();
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -41,11 +38,12 @@ public class SunProtectionFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.addStepHome_frameLayout,new AddStepHomeFragment());
+                fragmentTransaction.replace(R.id.welcomeFragment_frameLayout,new KnowProductFragment());
                 fragmentTransaction.commit();
             }
         });
 
-        return view;
+
+        return  view;
     }
 }

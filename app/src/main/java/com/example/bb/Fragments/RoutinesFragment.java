@@ -30,7 +30,8 @@ public class RoutinesFragment extends Fragment {
         Button morning = (Button) view.findViewById(R.id.morning);
         Button night = (Button) view.findViewById(R.id.night);
         Button addStepBtn = (Button) view.findViewById(R.id.addStepBtn);
-        Button backBtn = (Button) view.findViewById(R.id.btnBack);
+        Button backBtn = (Button) view.findViewById(R.id.btnBack_in_RoutinesFragment);
+        replaceFragment(new MorningFragment());
 
         morning.setOnClickListener(new View.OnClickListener() {
             @Override

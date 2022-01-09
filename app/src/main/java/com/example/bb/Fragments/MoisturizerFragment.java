@@ -20,7 +20,8 @@ public class MoisturizerFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_moisturizer, container, false);
 
-        Button btnForward = (Button) view.findViewById(R.id.btnForward);
+        Button btnForward = (Button) view.findViewById(R.id.btnForward_in_MoisturizerFragment);
+        Button btnBack = (Button) view.findViewById(R.id.btnBack_in_MoisturizerFragment) ;
 
         btnForward.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,6 +29,15 @@ public class MoisturizerFragment extends Fragment {
 
                 //Seçilen ürünü database kaydetmeli ve Routines fragment kısmında display etmeli
 
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.addStepHome_frameLayout,new AddStepHomeFragment());
+                fragmentTransaction.commit();
+            }
+        });
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.addStepHome_frameLayout,new AddStepHomeFragment());
                 fragmentTransaction.commit();
