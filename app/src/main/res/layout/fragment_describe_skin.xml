@@ -17,8 +17,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/btn_SelectSkinSubtype"
+    <Spinner
+        android:id="@+id/spinner_SelectSkinSubtype"
         android:layout_width="264dp"
         android:layout_height="48dp"
         android:layout_marginLeft="30dp"
@@ -27,8 +27,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/skinSubType" />
 
-    <Button
-        android:id="@+id/btn_SelectSkinType"
+    <Spinner
+        android:id="@+id/spinner_SelectSkinType"
         android:layout_width="264dp"
         android:layout_height="48dp"
         android:layout_marginLeft="30dp"
@@ -41,10 +41,10 @@
         android:id="@+id/describeSkinFragment_frameLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/btnContinue_in_DescribeSkin"
+        app:layout_constraintBottom_toTopOf="@id/btnSave_in_DescribeSkin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_SelectSkinSubtype"
+        app:layout_constraintTop_toBottomOf="@id/spinner_SelectSkinSubtype"
         app:layout_constraintVertical_weight="9">
 
 
@@ -94,6 +94,17 @@
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/skinType" />
+
+    <Button
+        android:id="@+id/btnSave_in_DescribeSkin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="Save"
+        app:layout_constraintBottom_toTopOf="@id/btnContinue_in_DescribeSkin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/describeSkinFragment_frameLayout" />
 
     <Button
         android:id="@+id/btnContinue_in_DescribeSkin"

@@ -30,7 +30,7 @@ public class RoutinesFragment extends Fragment {
         Button morning = (Button) view.findViewById(R.id.morning);
         Button night = (Button) view.findViewById(R.id.night);
         Button addStepBtn = (Button) view.findViewById(R.id.addStepBtn);
-        Button backBtn = (Button) view.findViewById(R.id.btnBack_in_RoutinesFragment);
+
         replaceFragment(new MorningFragment());
 
         morning.setOnClickListener(new View.OnClickListener() {
@@ -53,13 +53,7 @@ public class RoutinesFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),MainActivity.class);
-                startActivity(intent);
-            }
-        });
+
         return view;
     }
 

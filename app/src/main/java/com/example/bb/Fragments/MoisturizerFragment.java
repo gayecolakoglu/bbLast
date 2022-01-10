@@ -9,16 +9,29 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.example.bb.R;
 
 public class MoisturizerFragment extends Fragment {
     View view;
+
+    ImageButton moisturizer1;
+    ImageButton moisturizer2;
+    ImageButton moisturizer3;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_moisturizer, container, false);
+
+        moisturizer1 = (ImageButton) view.findViewById(R.id.moisturizer1);
+        moisturizer2 = (ImageButton) view.findViewById(R.id.moisturizer2);
+        moisturizer3 = (ImageButton) view.findViewById(R.id.moisturizer3);
+
+        //her bir imgBtn için setOnCLickListener yap , tıklandığında morning ya da nighttan addStepe basılmasına
+        // göre database o ürünü  morning ya da night routine atsın
 
         Button btnForward = (Button) view.findViewById(R.id.btnForward_in_MoisturizerFragment);
         Button btnBack = (Button) view.findViewById(R.id.btnBack_in_MoisturizerFragment) ;

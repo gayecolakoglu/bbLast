@@ -6,27 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.HomeFragment">
 
-    <EditText
-        android:id="@+id/editText_SkinSubType"
+    <Spinner
+        android:id="@+id/spinner_SkinSubType_in_HomeFragment"
         android:layout_width="264dp"
         android:layout_height="48dp"
-        android:ems="10"
-        android:hint="Skin Subtype"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@id/homeFragment_frameLayout"
-        app:layout_constraintEnd_toStartOf="@id/btnSelect2"
+        android:layout_marginLeft="30dp"
+        android:text="Select Your Skin Subtype"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/btnSave_in_HomeFragment"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtSkinSubType" />
 
-    <EditText
-        android:id="@+id/editText_SkinType"
+    <Spinner
+        android:id="@+id/spinner_SkinType_in_HomeFragment"
         android:layout_width="264dp"
         android:layout_height="48dp"
-        android:ems="10"
-        android:hint="SkinType"
-        android:inputType="textEmailAddress"
+        android:layout_marginLeft="30dp"
+        android:text="Select Your Skin Type"
+        android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@id/txtSkinSubType"
-        app:layout_constraintEnd_toStartOf="@id/btnSelect1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtSkinType" />
 
@@ -37,7 +35,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editText_SkinSubType"
+        app:layout_constraintTop_toBottomOf="@id/btnSave_in_HomeFragment"
         app:layout_constraintVertical_weight="9">
 
 
@@ -65,7 +63,7 @@
         android:layout_marginEnd="240dp"
         android:text="Your skin type:"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@id/editText_SkinType"
+        app:layout_constraintBottom_toTopOf="@id/spinner_SkinType_in_HomeFragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtWelcome" />
@@ -78,34 +76,20 @@
         android:layout_marginEnd="210dp"
         android:text="Your skin subtype:"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@id/editText_SkinSubType"
+        app:layout_constraintBottom_toTopOf="@id/spinner_SkinSubType_in_HomeFragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtSkinType" />
 
     <Button
-        android:id="@+id/btnSelect1"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnSave_in_HomeFragment"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:layout_marginBottom="48dp"
-        android:text="Select"
-        app:layout_constraintBottom_toTopOf="@+id/btnSelect2"
+        android:layout_marginTop="80dp"
+        android:text="Save Changes"
+        app:layout_constraintBottom_toTopOf="@id/homeFragment_frameLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/editText_SkinType"
-        app:layout_constraintTop_toBottomOf="@+id/txtWelcome"
-        app:layout_constraintVertical_bias="0.981" />
-
-    <Button
-        android:id="@+id/btnSelect2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Select"
-        app:layout_constraintBottom_toBottomOf="@+id/editText_SkinSubType"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/editText_SkinSubType"
-        app:layout_constraintTop_toBottomOf="@id/btnSelect1" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_SkinSubType_in_HomeFragment" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

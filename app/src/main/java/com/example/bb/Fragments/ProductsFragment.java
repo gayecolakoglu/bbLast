@@ -33,36 +33,61 @@ public class ProductsFragment extends Fragment {
         ingredients = view.findViewById(R.id.ingredients);
         comments = view.findViewById(R.id.comments);
 
+
+
         int clickedButtonID = view.getId();
+
+        //Bundle ile tıklanan buttona göre ingredietns ya da commentte databaseden veri çekecez
+        //çünkü butona tıkandığında aynı ingredients ve comment sayfasına gidiyoruz bu yuzden
+        //tıklanan butona göre databaseden veri çekmeliyiz
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                IngredientsFragment newIngredientsFragment = new IngredientsFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("key1", "btn1");
+                newIngredientsFragment.setArguments(bundle);
+
+                fragmentTransaction.replace(R.id.products_frameLayout,new IngredientsFragment());
+                fragmentTransaction.commit();
+
                 btn2.setVisibility(View.GONE);
                 btn3.setVisibility(View.GONE);
-                replaceFragment(new IngredientsFragment());
                 ingredients.setVisibility(View.VISIBLE);
                 comments.setVisibility(View.VISIBLE);
+
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                IngredientsFragment newIngredientsFragment = new IngredientsFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("key2", "btn2");
+                newIngredientsFragment.setArguments(bundle);
                 btn1.setVisibility(View.GONE);
                 btn3.setVisibility(View.GONE);
                 replaceFragment(new IngredientsFragment());
                 ingredients.setVisibility(View.VISIBLE);
                 comments.setVisibility(View.VISIBLE);
+
             }
         });
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                IngredientsFragment newIngredientsFragment = new IngredientsFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("key3", "btn3");
+                newIngredientsFragment.setArguments(bundle);
                 btn2.setVisibility(View.GONE);
                 btn1.setVisibility(View.GONE);
                 replaceFragment(new IngredientsFragment());
                 ingredients.setVisibility(View.VISIBLE);
                 comments.setVisibility(View.VISIBLE);
+
             }
         });
 

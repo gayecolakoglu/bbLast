@@ -30,7 +30,8 @@ public class WelcomeFragment extends Fragment {
         TextView skinType = (TextView) view.findViewById(R.id.skinType);
         TextView skinSubtype = (TextView) view.findViewById(R.id.skinSubType);
 
-        //datadan userın password ve emailini çek.
+        //datadan userın password ve emailini çek.EditTexte yerleştir
+        //vakit varsa düzenleyebilmesi için save changes butonu ekle
 
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override

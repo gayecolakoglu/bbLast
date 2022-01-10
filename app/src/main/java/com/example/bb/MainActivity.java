@@ -17,7 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity<s, message> extends AppCompatActivity {
 
 
     FirebaseAuth mAuth;
@@ -33,10 +33,14 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,new HomeFragment()).commit();
+
+
+
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener=
             new BottomNavigationView.OnNavigationItemSelectedListener() {
+
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     Fragment selectedFragment = null;
@@ -61,11 +65,11 @@ public class MainActivity extends AppCompatActivity {
                             break;
                     }
 
+
+
                     getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,selectedFragment).commit();
                     return true;
                 }
-
-
 
                 private void signOutUser() {
                     Intent mainActivity = new Intent(MainActivity.this,SignInActivity.class);
@@ -74,4 +78,5 @@ public class MainActivity extends AppCompatActivity {
                     finish();
                 }
             };
+
 }

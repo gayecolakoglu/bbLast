@@ -16,9 +16,9 @@ import com.example.bb.R;
 public class CleanserFragment extends Fragment {
     View view;
 
-    ImageButton celenes;
-    ImageButton cerave;
-    ImageButton simple;
+    ImageButton cleanser1;
+    ImageButton cleanser2;
+    ImageButton cleanser3;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -26,9 +26,12 @@ public class CleanserFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_cleanser, container, false);
 
-        celenes = (ImageButton) view.findViewById(R.id.cleanser1);
-        cerave = (ImageButton) view.findViewById(R.id.cleanser2);
-        simple = (ImageButton) view.findViewById(R.id.cleanser3);
+        //her bir imgBtn için setOnCLickListener yap , tıklandığında morning ya da nighttan addStepe basılmasına
+        // göre database o ürünü  morning ya da night routine atsın
+
+        cleanser1 = (ImageButton) view.findViewById(R.id.cleanser1);
+        cleanser2 = (ImageButton) view.findViewById(R.id.cleanser2);
+        cleanser3 = (ImageButton) view.findViewById(R.id.cleanser3);
 
         int clickedButtonID = view.getId();
 

@@ -1,5 +1,6 @@
 package com.example.bb.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.bb.MainActivity;
 import com.example.bb.R;
 
 public class AddStepHomeFragment extends Fragment {
@@ -34,7 +36,6 @@ public class AddStepHomeFragment extends Fragment {
         btnCleanser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //ilgili ürünleri databaseden çekip fragmenta atmalı
                 replaceFragment(new CleanserFragment());
                 btnCleanser.setVisibility(View.GONE);
                 btnMoisturizer.setVisibility(View.GONE);
@@ -69,8 +70,11 @@ public class AddStepHomeFragment extends Fragment {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Save tıkladığında databaseden kişinin gün ve gece rutin ürünlerini çekip Routines fragmentına at.
-                replaceFragment(new RoutinesFragment());
+                // Save tıkladığında  kişinin morning ya da nighttan add stepe basılmasını kontrol edip
+                // ona göre  databaseden routinesleri RoutinesFragmenta morning ve night olarak atsın .
+
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                getActivity().startActivity(intent);
             }
         });
 
