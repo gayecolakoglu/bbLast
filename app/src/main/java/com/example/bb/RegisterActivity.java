@@ -44,7 +44,29 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         //register = (Button) findViewById(R.id.btnRegister_in_RegisterActivity);
         //register.setOnClickListener(this);
 
-        // change activity to SignIn acivity if button clicked
+        //thread for timing
+        Toast toast;
+        Thread thread;
+
+            toast = Toast.makeText(this, "Thanks for joining us!", Toast.LENGTH_SHORT);
+            thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    for (int i=0; i<1000; i++){
+                        try {
+                            Thread.sleep(1000);
+                            toast.show();
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            });
+            thread.start();
+
+
+            // change activity to SignIn acivity if button clicked
         haveAnAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
