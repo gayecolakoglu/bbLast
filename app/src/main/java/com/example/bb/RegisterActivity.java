@@ -17,7 +17,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 //Author: Rozerin Yıldız
-
+// we can shape it as we want with onclicklistener
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button btn_register;

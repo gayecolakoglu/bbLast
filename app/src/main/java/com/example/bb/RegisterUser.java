@@ -16,10 +16,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
-
+//we can shape the interface as we want with onclicklistener
 public class RegisterUser extends AppCompatActivity implements View.OnClickListener{
 
-
+    //firebaseAuth for login operations
     private EditText editTextEmail,editTextPassword;
     private Button btn_register;
     private FirebaseAuth mAuth;
@@ -27,7 +27,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();  //can use objects that firebaseauth class references.
 
         editTextEmail = (EditText) findViewById(R.id.email_in_RegisterActivity);
         editTextPassword = (EditText) findViewById(R.id.password_in_RegisterActivity);
