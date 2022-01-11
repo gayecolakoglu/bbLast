@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.example.bb.MainActivity;
 import com.example.bb.R;
-
+//Author: Gaye Çolakoğlu
 public class AddStepHomeFragment extends Fragment {
 
     View view;
@@ -25,14 +25,15 @@ public class AddStepHomeFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_add_step_home, container, false);
 
-        Button btnCleanser = (Button)view.findViewById(R.id.redness);
-        Button btnMoisturizer = (Button)view.findViewById(R.id.dehydrated);
-        Button btnSunProtection = (Button)view.findViewById(R.id.sensitive);
+        // We get the necessary widgets
+        Button btnCleanser = (Button)view.findViewById(R.id.cleanser);
+        Button btnMoisturizer = (Button)view.findViewById(R.id.moisturizer);
+        Button btnSunProtection = (Button)view.findViewById(R.id.sun);
         Button btnSave = (Button)view.findViewById(R.id.btnSave_in_SkinType);
-
         TextView txt= (TextView) view.findViewById(R.id.stepName);
 
 
+        // change fragments and make some widgets GONE with btnClick
         btnCleanser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,6 +68,8 @@ public class AddStepHomeFragment extends Fragment {
             }
         });
 
+        // get the necessary data from database for morning and night routines also display them in MorningFragment and NightFragment
+        // change the activity to the MainActivity
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,7 +84,7 @@ public class AddStepHomeFragment extends Fragment {
         return view;
     }
 
-
+    // function for changing fragment with clicked one
     private void replaceFragment(Fragment fragment){
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.addStepHome_frameLayout,fragment);

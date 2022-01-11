@@ -14,7 +14,7 @@ import android.widget.Button;
 import com.example.bb.AddStepActivity;
 import com.example.bb.MainActivity;
 import com.example.bb.R;
-
+// Author: Rozerin Yıldız
 public class KnowSkincareIngredientsFragment extends Fragment {
     View view;
     @Override
@@ -23,9 +23,11 @@ public class KnowSkincareIngredientsFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_know_skincare_ingredients, container, false);
 
+        // We get the necessary widgets
         Button btnContinue = (Button) view.findViewById(R.id.btnContinue_in_KnowIngredients);
         Button btnBack = (Button) view.findViewById(R.id.btnBack_in_KnowIngredients);
 
+        // Continue with next activity with btnClick
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,6 +36,7 @@ public class KnowSkincareIngredientsFragment extends Fragment {
             }
         });
 
+        // Turn back to the last fragment by btnClick
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

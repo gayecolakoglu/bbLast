@@ -16,4 +16,12 @@
         Foam cleansers are lightweight solutions creating a foamy lather when dispensed from a pump package. Foam cleansers are pleasant to use and remove excess oil as effectively as gel cleansers—ideal for combination skin.</string>
     <string name="moisturizer">Hello blank fragment</string>
     <string name="sunProtection">Hello blank fragment</string>
+    <string name="routines">Routines</string>
+    <string name="night">Night</string>
+    <string name="add_step">Add Step</string>
+    <string name="morning">Morning</string>
+    <string name="products">Products</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="comments">Comments</string>
+
 </resources>

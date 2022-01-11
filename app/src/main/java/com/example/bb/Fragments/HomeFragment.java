@@ -15,11 +15,13 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.bb.R;
-
+//Author: Gaye Çolakoğlu
 public class HomeFragment extends Fragment {
 
     View view;
     //default spinner seçimini databaseden çek koy.
+
+    // Lists for our spinners data
     private String[] skinType={"Select your skin type","On the oilier side","Dry", "Normal","Combination"};
     private String[] skinSubtype={"Select your skin subtype","Redness-prone","Sensitive","Dehydrated","Acne-prone"};
 
@@ -29,25 +31,27 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_home, container, false);
 
+        // We get the necessary widgets
         Button btnSave = (Button) view.findViewById(R.id.btnSave_in_HomeFragment);
-
-        //default spinner değeri olarak databasedekileri buraya ekle
+                    //default spinner değeri olarak databasedekileri buraya ekle
         Spinner btnSelectSkinType = (Spinner) view.findViewById(R.id.spinner_SkinType_in_HomeFragment);
         Spinner btnSelectSkinSubtype = (Spinner) view.findViewById(R.id.spinner_SkinSubType_in_HomeFragment);
 
+
+        // Create Adapter for our spinners
         ArrayAdapter dataAdapterForSkinType = new ArrayAdapter<String>(this.getActivity(),android.R.layout.simple_spinner_item,skinType);
         ArrayAdapter  dataAdapterForSkinSubtype = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item,skinSubtype);
 
-
+        // Create DropDown for our spinners
         dataAdapterForSkinType.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dataAdapterForSkinSubtype.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-
+        // Setting Adapter for our spinners
         btnSelectSkinType.setAdapter(dataAdapterForSkinType);
         btnSelectSkinSubtype.setAdapter(dataAdapterForSkinSubtype);
 
+        // Make toast when item selected from spinners
         btnSelectSkinType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
@@ -60,7 +64,6 @@ public class HomeFragment extends Fragment {
         });
 
         btnSelectSkinSubtype.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
@@ -71,6 +74,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        //optional
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

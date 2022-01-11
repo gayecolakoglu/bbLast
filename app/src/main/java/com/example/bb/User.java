@@ -1,6 +1,6 @@
 package com.example.bb;
 
-
+//Author: Gaye Çolakoğlu
 public class User {
 
     //use same name in firebase

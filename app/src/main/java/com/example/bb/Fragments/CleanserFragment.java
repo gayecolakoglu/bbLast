@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.bb.R;
-
+//Author:Rozerin Yıldız
 public class CleanserFragment extends Fragment {
     View view;
 
@@ -29,15 +29,42 @@ public class CleanserFragment extends Fragment {
         //her bir imgBtn için setOnCLickListener yap , tıklandığında morning ya da nighttan addStepe basılmasına
         // göre database o ürünü  morning ya da night routine atsın
 
+        // We get the necessary widgets
+        Button btnForward = (Button) view.findViewById(R.id.btnForward_in_CleanserFragment);
+        Button btnBack = (Button) view.findViewById(R.id.btnBack_in_CleanserFragment);
         cleanser1 = (ImageButton) view.findViewById(R.id.cleanser1);
         cleanser2 = (ImageButton) view.findViewById(R.id.cleanser2);
         cleanser3 = (ImageButton) view.findViewById(R.id.cleanser3);
 
-        int clickedButtonID = view.getId();
+        // get the clicked button id to understand if we are gonna add product morning or night routine.
+        int clickedRoutine = view.getId();
 
-        Button btnForward = (Button) view.findViewById(R.id.btnForward_in_CleanserFragment);
-        Button btnBack = (Button) view.findViewById(R.id.btnBack_in_CleanserFragment);
+        cleanser1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // add this product to the clickedRoutine database
+            }
+        });
 
+        cleanser2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // add this product to the clickedRoutine database
+            }
+        });
+
+        cleanser3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // add this product to the clickedRoutine database
+            }
+        });
+
+
+
+
+
+        // Go back to the AddStepHomeFragment with btnClick
         btnForward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,6 +77,7 @@ public class CleanserFragment extends Fragment {
             }
         });
 
+        // Go back to the AddStepHomeFragment with btnClick
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

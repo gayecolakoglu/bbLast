@@ -16,7 +16,7 @@ import com.example.bb.Fragments.MorningFragment;
 import com.example.bb.Fragments.NightFragment;
 import com.example.bb.MainActivity;
 import com.example.bb.R;
-
+//Author:Gaye Çolakoğlu
 public class RoutinesFragment extends Fragment {
 
     View view;
@@ -27,12 +27,16 @@ public class RoutinesFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_routines, container, false);
 
+        // We get the necessary widgets
         Button morning = (Button) view.findViewById(R.id.morning);
         Button night = (Button) view.findViewById(R.id.night);
         Button addStepBtn = (Button) view.findViewById(R.id.addStepBtn);
 
+        // set the opening fragment to the HomeFragment()
         replaceFragment(new MorningFragment());
 
+
+        // open clicked btn's fragment
         morning.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,6 +50,8 @@ public class RoutinesFragment extends Fragment {
             }
         });
 
+
+        // open clicked activity
         addStepBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,6 +63,7 @@ public class RoutinesFragment extends Fragment {
         return view;
     }
 
+    // function for changing fragment with clicked one
     private void replaceFragment(Fragment fragment){
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.routines_frameLayout,fragment);

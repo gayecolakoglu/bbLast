@@ -1,5 +1,5 @@
 package com.example.bb;
-
+//Author: Rozerin Yıldız
 public class Product {
     //use same name in firebase
     public String  type;

@@ -11,24 +11,30 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
+//Author: Gaye Çolakoğlu
 public class SignInActivity extends AppCompatActivity {
     private EditText email, password;
+    //firebase
     FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
+
+        // We get the necessary widgets
         email =findViewById(R.id.email_in_SignInActivity);
         password =findViewById(R.id.password_in_SignInActivity);
         Button btn_login = findViewById(R.id.btn_login);
         Button btn_register = findViewById(R.id.btn_Register_in_SignInActivity);
+
+        //firebase init
         mAuth=FirebaseAuth.getInstance();
+
+        // check classic terms for login button click
         btn_login.setOnClickListener(v -> {
             String email= this.email.getText().toString().trim();
             String password= this.password.getText().toString().trim();
-
 
             if(email.isEmpty())
             {
@@ -54,6 +60,7 @@ public class SignInActivity extends AppCompatActivity {
                 this.password.requestFocus();
                 return;
             }
+            // if nothing is wrong then change activity to Welcome activty else make a toast
             mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
                 if(task.isSuccessful())
                 {
@@ -68,6 +75,8 @@ public class SignInActivity extends AppCompatActivity {
 
             });
         });
+
+        // if register button is clicked then change the activity to the Register activity
         btn_register.setOnClickListener(v -> startActivity(new Intent(SignInActivity.this,RegisterActivity.class )));
     }
 

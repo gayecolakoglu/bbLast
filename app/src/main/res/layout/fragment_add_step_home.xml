@@ -13,7 +13,7 @@
         app:layout_constraintBottom_toBottomOf="@id/btnSave_in_SkinType"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dehydrated" />
+        app:layout_constraintTop_toBottomOf="@id/moisturizer" />
 
     <TextView
         android:id="@+id/stepName"
@@ -21,11 +21,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center|top"
         android:layout_marginTop="30dp"
+        android:layout_marginBottom="40dp"
         android:ems="10"
         android:gravity="center"
-        android:text="Step Name"
+        android:text="Select a Routine Step"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@id/redness"
+        app:layout_constraintBottom_toTopOf="@id/cleanser"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +35,7 @@
 
 
     <Button
-        android:id="@+id/redness"
+        android:id="@+id/cleanser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -46,17 +47,17 @@
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:minHeight="48dp"
-        android:text="@string/cleanser"
-        android:textSize="10sp"
+        android:text="Cleanser"
+        android:textSize="14sp"
         android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@id/sensitive"
+        app:layout_constraintBottom_toTopOf="@id/sun"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/stepName" />
 
     <Button
-        android:id="@+id/dehydrated"
+        android:id="@+id/moisturizer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -69,14 +70,14 @@
         android:inputType="textMultiLine"
         android:minHeight="48dp"
         android:text="moisturizer"
-        app:layout_constraintBottom_toTopOf="@id/selectSkinSubtype_frameLayout"
+        app:layout_constraintBottom_toTopOf="@id/addStepHome_frameLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sensitive" />
+        app:layout_constraintTop_toBottomOf="@id/sun" />
 
     <Button
-        android:id="@+id/sensitive"
+        android:id="@+id/sun"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -89,11 +90,11 @@
         android:inputType="textMultiLine"
         android:minHeight="48dp"
         android:text="sunProtection"
-        app:layout_constraintBottom_toTopOf="@+id/dehydrated"
+        app:layout_constraintBottom_toTopOf="@+id/moisturizer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/redness" />
+        app:layout_constraintTop_toBottomOf="@+id/cleanser" />
 
     <Button
         android:id="@+id/btnSave_in_SkinType"
@@ -104,7 +105,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/selectSkinSubtype_frameLayout" />
+        app:layout_constraintTop_toBottomOf="@id/addStepHome_frameLayout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

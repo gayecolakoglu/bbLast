@@ -9,7 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.bb.R;
+//Author: Gaye Çolakoğlu
 
+//displays night routines
 
 public class NightFragment extends Fragment {
     View view;

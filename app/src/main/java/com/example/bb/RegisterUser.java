@@ -1,5 +1,5 @@
 package com.example.bb;
-
+//Author: Rozerin Yıldız
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;

@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.bb.R;
-
+//Author:Rozerin Yıldız
 public class ProductsFragment extends Fragment {
     View view;
 
@@ -27,6 +27,8 @@ public class ProductsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_products, container, false);
+
+        // We get the necessary widgets
         btn1 = (ImageButton) view.findViewById(R.id.btn1);
         btn2 = (ImageButton) view.findViewById(R.id.btn2);
         btn3 = (ImageButton) view.findViewById(R.id.btn3);
@@ -35,81 +37,145 @@ public class ProductsFragment extends Fragment {
 
 
 
-        int clickedButtonID = view.getId();
-
-        //Bundle ile tıklanan buttona göre ingredietns ya da commentte databaseden veri çekecez
-        //çünkü butona tıkandığında aynı ingredients ve comment sayfasına gidiyoruz bu yuzden
-        //tıklanan butona göre databaseden veri çekmeliyiz
-
+        // Send message about clicked button to the Ingredients and Comment Fragments with Bundle
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                IngredientsFragment newIngredientsFragment = new IngredientsFragment();
                 Bundle bundle = new Bundle();
-                bundle.putString("key1", "btn1");
-                newIngredientsFragment.setArguments(bundle);
+                bundle.putString("key","btn1".toString());
 
-                fragmentTransaction.replace(R.id.products_frameLayout,new IngredientsFragment());
-                fragmentTransaction.commit();
+                //Bundle bundle2 = new Bundle();
+                //bundle2.putString("key1","btn1".toString());
 
+                IngredientsFragment newFragment = new IngredientsFragment();
+                newFragment.setArguments(bundle);
+
+                // set opening fragments to the IngredientsFragment
+                getFragmentManager().beginTransaction().replace(R.id.products_frameLayout,newFragment).commit();
+
+                CommentFragment newFragment2 = new CommentFragment();
+                newFragment2.setArguments(bundle);
+
+                // change fragment with bundle message if button clicked
+                ingredients.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        getFragmentManager().beginTransaction().replace(R.id.products_frameLayout,newFragment).commit();
+                    }
+                });
+
+                // change fragment with bundle message if button clicked
+                comments.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        getFragmentManager().beginTransaction().replace(R.id.products_frameLayout,newFragment2).commit();
+                    }
+                });
+
+                // Make VISIBLE and GONE necessary buttons
                 btn2.setVisibility(View.GONE);
                 btn3.setVisibility(View.GONE);
+                //replaceFragment(new IngredientsFragment());
                 ingredients.setVisibility(View.VISIBLE);
                 comments.setVisibility(View.VISIBLE);
 
             }
         });
+
+        // Send message about clicked button to the Ingredients and Comment Fragments with Bundle
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                IngredientsFragment newIngredientsFragment = new IngredientsFragment();
                 Bundle bundle = new Bundle();
-                bundle.putString("key2", "btn2");
-                newIngredientsFragment.setArguments(bundle);
+                bundle.putString("key","btn2".toString());
+
+                //Bundle bundle2 = new Bundle();
+                //bundle2.putString("key1","btn1".toString());
+
+                IngredientsFragment newFragment = new IngredientsFragment();
+                newFragment.setArguments(bundle);
+
+                // set opening fragments to the IngredientsFragment
+                getFragmentManager().beginTransaction().replace(R.id.products_frameLayout,newFragment).commit();
+
+                CommentFragment newFragment2 = new CommentFragment();
+                newFragment2.setArguments(bundle);
+
+                // change fragment with bundle message if button clicked
+                ingredients.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        getFragmentManager().beginTransaction().replace(R.id.products_frameLayout,newFragment).commit();
+                    }
+                });
+
+                // change fragment with bundle message if button clicked
+                comments.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        getFragmentManager().beginTransaction().replace(R.id.products_frameLayout,newFragment2).commit();
+                    }
+                });
+
+                // Make VISIBLE and GONE necessary buttons
                 btn1.setVisibility(View.GONE);
                 btn3.setVisibility(View.GONE);
-                replaceFragment(new IngredientsFragment());
+                //replaceFragment(new IngredientsFragment());
                 ingredients.setVisibility(View.VISIBLE);
                 comments.setVisibility(View.VISIBLE);
 
             }
         });
+
+        // Send message about clicked button to the Ingredients and Comment Fragments with Bundle
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                IngredientsFragment newIngredientsFragment = new IngredientsFragment();
                 Bundle bundle = new Bundle();
-                bundle.putString("key3", "btn3");
-                newIngredientsFragment.setArguments(bundle);
+                bundle.putString("key","btn3".toString());
+
+                //Bundle bundle2 = new Bundle();
+                //bundle2.putString("key1","btn1".toString());
+
+                IngredientsFragment newFragment = new IngredientsFragment();
+                newFragment.setArguments(bundle);
+
+                // set opening fragments to the IngredientsFragment
+                getFragmentManager().beginTransaction().replace(R.id.products_frameLayout,newFragment).commit();
+
+                CommentFragment newFragment2 = new CommentFragment();
+                newFragment2.setArguments(bundle);
+
+                // change fragment with bundle message if button clicked
+                ingredients.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        getFragmentManager().beginTransaction().replace(R.id.products_frameLayout,newFragment).commit();
+                    }
+                });
+
+                // change fragment with bundle message if button clicked
+                comments.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        getFragmentManager().beginTransaction().replace(R.id.products_frameLayout,newFragment2).commit();
+                    }
+                });
+
+                // Make VISIBLE and GONE necessary buttons
                 btn2.setVisibility(View.GONE);
                 btn1.setVisibility(View.GONE);
-                replaceFragment(new IngredientsFragment());
+                //replaceFragment(new IngredientsFragment());
                 ingredients.setVisibility(View.VISIBLE);
                 comments.setVisibility(View.VISIBLE);
 
             }
         });
 
-        ingredients.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                replaceFragment(new IngredientsFragment());
-            }
-        });comments.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                replaceFragment(new CommentFragment());
-            }
-        });
+
+
 
         return view;
     }
 
-    private void replaceFragment(Fragment fragment){
-        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.products_frameLayout,fragment);
-        fragmentTransaction.commit();
-
-    }
 }

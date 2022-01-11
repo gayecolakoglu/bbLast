@@ -16,8 +16,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+//Author: Rozerin Yıldız
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
+
     Button btn_register;
     EditText email, password;
     FirebaseAuth mAuth;
@@ -29,15 +31,20 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        // We get the necessary widgets
         email =findViewById(R.id.email_in_RegisterActivity);
         password =findViewById(R.id.password_in_RegisterActivity);
         btn_register =findViewById(R.id.btnRegister_in_RegisterActivity);
         haveAnAccount = findViewById(R.id.haveAnAccount);
+
+        //firebase init
         mAuth=FirebaseAuth.getInstance();
 
         //register = (Button) findViewById(R.id.btnRegister_in_RegisterActivity);
         //register.setOnClickListener(this);
 
+        // change activity to SignIn acivity if button clicked
         haveAnAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

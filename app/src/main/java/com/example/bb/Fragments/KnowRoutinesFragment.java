@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.bb.R;
-
+// Author: Rozerin Yıldız
 public class KnowRoutinesFragment extends Fragment {
     View view;
     @Override
@@ -19,9 +19,12 @@ public class KnowRoutinesFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_know_routines, container, false);
+
+        // We get the necessary widgets
         Button btnContinue = (Button) view.findViewById(R.id.btnContinue_in_KnowRoutines);
         Button btnBack = (Button) view.findViewById(R.id.btnBack_in_KnowRoutines);
 
+        // Continue with next fragment with btnClick
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -31,6 +34,7 @@ public class KnowRoutinesFragment extends Fragment {
             }
         });
 
+        // Turn back to the last fragment by btnClick
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

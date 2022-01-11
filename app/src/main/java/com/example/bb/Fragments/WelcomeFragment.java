@@ -1,5 +1,5 @@
 package com.example.bb.Fragments;
-
+// Author: Gaye Çolakoğlu
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -21,6 +21,8 @@ public class WelcomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+        // We get the necessary widgets according to the ids
         view = inflater.inflate(R.layout.fragment_welcome, container, false);
         Button btnContinue = (Button)view.findViewById(R.id.btnContinue_in_Welcome);
         EditText password = (EditText) view.findViewById(R.id.password_in_Welcome);
@@ -33,12 +35,19 @@ public class WelcomeFragment extends Fragment {
         //datadan userın password ve emailini çek.EditTexte yerleştir
         //vakit varsa düzenleyebilmesi için save changes butonu ekle
 
+
+        // go to the next fragment with btnClick
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //For change fragments
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.welcomeFragment_frameLayout,new DescribeSkinFragment());
                 fragmentTransaction.commit();
+
+                // we do not want to see these widgets at our next fragments
+                // so make them GONE
                 btnContinue.setVisibility(View.GONE);
                 password.setVisibility(View.GONE);
                 email.setVisibility(View.GONE);

@@ -16,10 +16,9 @@ import com.example.bb.Fragments.RoutinesFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
-
+// Author: Gaye Çolakoğlu
 public class MainActivity<s, message> extends AppCompatActivity {
-
-
+    //create mAuth for access database
     FirebaseAuth mAuth;
 
     @Override
@@ -29,15 +28,16 @@ public class MainActivity<s, message> extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+        //Create bottom navigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
+        // set the opening fragment to the HomeFragment()
         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,new HomeFragment()).commit();
-
-
 
     }
 
+    // open the clicked fragment by getting it's id
     private BottomNavigationView.OnNavigationItemSelectedListener navListener=
             new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -56,9 +56,8 @@ public class MainActivity<s, message> extends AppCompatActivity {
                         case R.id.navigation_products:
                             selectedFragment=new ProductsFragment();
                             break;
+                        // signout and change activity to SignInAcivity
                         case R.id.navigation_signout:
-                            //logine yolla
-                         //   selectedFragment=new HomeFragment();
                             mAuth.signOut();
                             signOutUser();
                             activity = new SignInActivity();
@@ -66,11 +65,12 @@ public class MainActivity<s, message> extends AppCompatActivity {
                     }
 
 
-
+                    //for change fragment with clicked one
                     getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,selectedFragment).commit();
                     return true;
                 }
 
+                // function for sigonut fragment: change activity to SignInActivity if clicked.
                 private void signOutUser() {
                     Intent mainActivity = new Intent(MainActivity.this,SignInActivity.class);
                     mainActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

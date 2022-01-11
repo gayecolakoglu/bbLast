@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Products"
-        android:textSize="24dp"
+        android:text="@string/products"
+        android:textSize="24sp"
         ></TextView>
 
     <LinearLayout
@@ -23,12 +23,13 @@
         android:gravity="center">
 
         <ImageButton
-            android:visibility="visible"
             android:id="@+id/btn1"
-            android:src="@drawable/celenes1"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:scaleType="fitXY" />
+            android:scaleType="fitXY"
+            android:src="@drawable/celenes1"
+            android:visibility="visible"
+            tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
         <ImageButton
             android:id="@+id/btn2"
@@ -36,7 +37,8 @@
             android:layout_height="100dp"
             android:scaleType="fitXY"
             android:src="@drawable/celenes2"
-            android:visibility="visible" />
+            android:visibility="visible"
+            tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
         <ImageButton
             android:id="@+id/btn3"
@@ -45,7 +47,7 @@
             android:scaleType="fitXY"
             android:src="@drawable/laroche"
             android:visibility="visible"
-            android:contentDescription="TODO" />
+            tools:ignore="ImageContrastCheck,SpeakableTextPresentCheck" />
 
     </LinearLayout>
     <LinearLayout
@@ -58,15 +60,17 @@
             android:id="@+id/ingredients"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ingredients"
-            android:visibility="gone" />
+            android:text="@string/ingredients"
+            android:visibility="gone"
+            style="?android:attr/buttonBarButtonStyle" />
 
         <Button
             android:id="@+id/comments"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Comments"
-            android:visibility="gone"/>
+            android:text="@string/comments"
+            android:visibility="gone"
+            style="?android:attr/buttonBarButtonStyle" />
 
     </LinearLayout>
 
