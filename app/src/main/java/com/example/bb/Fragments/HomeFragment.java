@@ -2,6 +2,7 @@ package com.example.bb.Fragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -11,19 +12,24 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.bb.R;
+import com.example.bb.User;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 //Author: Gaye Çolakoğlu
 public class HomeFragment extends Fragment {
 
     View view;
-    //default spinner seçimini databaseden çek koy.
-
-    // Lists for our spinners data
-    private String[] skinType={"Select your skin type","On the oilier side","Dry", "Normal","Combination"};
-    private String[] skinSubtype={"Select your skin subtype","Redness-prone","Sensitive","Dehydrated","Acne-prone"};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,55 +38,33 @@ public class HomeFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_home, container, false);
 
         // We get the necessary widgets
-        Button btnSave = (Button) view.findViewById(R.id.btnSave_in_HomeFragment);
-                    //default spinner değeri olarak databasedekileri buraya ekle
-        Spinner btnSelectSkinType = (Spinner) view.findViewById(R.id.spinner_SkinType_in_HomeFragment);
-        Spinner btnSelectSkinSubtype = (Spinner) view.findViewById(R.id.spinner_SkinSubType_in_HomeFragment);
 
+        TextView btnSelectSkinType = (TextView) view.findViewById(R.id.spinner_SkinType_in_HomeFragment);
+        TextView btnSelectSkinSubtype = (TextView) view.findViewById(R.id.spinner_SkinSubType_in_HomeFragment);
 
-        // Create Adapter for our spinners
-        ArrayAdapter dataAdapterForSkinType = new ArrayAdapter<String>(this.getActivity(),android.R.layout.simple_spinner_item,skinType);
-        ArrayAdapter  dataAdapterForSkinSubtype = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item,skinSubtype);
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-        // Create DropDown for our spinners
-        dataAdapterForSkinType.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        dataAdapterForSkinSubtype.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        // Setting Adapter for our spinners
-        btnSelectSkinType.setAdapter(dataAdapterForSkinType);
-        btnSelectSkinSubtype.setAdapter(dataAdapterForSkinSubtype);
-
-        // Make toast when item selected from spinners
-        btnSelectSkinType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference uidRef = rootRef.child("Users").child(uid);
+        ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int position, long id) {
-                Toast.makeText(getActivity().getApplicationContext(),skinType[position] , Toast.LENGTH_LONG).show();
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User user = snapshot.getValue(User.class);
+                String skinType =  user.getSkinType();
+                btnSelectSkinType.setText(skinType);
+                String skinSubtype =  user.getSkinSubtype();
+                btnSelectSkinSubtype.setText(skinSubtype);
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
+            public void onCancelled(@NonNull DatabaseError error) {
 
-        btnSelectSkinSubtype.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int position, long id) {
-                Toast.makeText(getActivity().getApplicationContext(), skinSubtype[position], Toast.LENGTH_LONG).show();
             }
+        };
 
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
+        uidRef.addListenerForSingleValueEvent(valueEventListener);
 
-        //optional
-        btnSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //seçilenleri database at
-            }
-        });
+
 
         return view;
     }

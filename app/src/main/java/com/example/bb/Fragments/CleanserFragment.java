@@ -2,6 +2,7 @@ package com.example.bb.Fragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -10,11 +11,35 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.bb.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.util.HashMap;
+
 //Author:Rozerin Yıldız
 public class CleanserFragment extends Fragment {
     View view;
+
+    public CleanserFragment(){}; //Required empty public Constructor
+
+    FirebaseAuth mAuth;
+    FirebaseUser user;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+
+    //Storage
+    StorageReference storageReference;
+
+    private FirebaseStorage firebaseStorage;
 
     ImageButton cleanser1;
     ImageButton cleanser2;
@@ -26,8 +51,13 @@ public class CleanserFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_cleanser, container, false);
 
-        //her bir imgBtn için setOnCLickListener yap , tıklandığında morning ya da nighttan addStepe basılmasına
-        // göre database o ürünü  morning ya da night routine atsın
+        mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference("Users");
+        storageReference = firebaseStorage.getInstance().getReference(); //firabase store ref
+
+
 
         // We get the necessary widgets
         Button btnForward = (Button) view.findViewById(R.id.btnForward_in_CleanserFragment);
@@ -37,13 +67,50 @@ public class CleanserFragment extends Fragment {
         cleanser3 = (ImageButton) view.findViewById(R.id.cleanser3);
 
         // get the clicked button id to understand if we are gonna add product morning or night routine.
-        int clickedRoutine = view.getId();
+        // get the incoming message from other fragment
+        Bundle bundle = this.getArguments();
 
         cleanser1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                // add this product to the clickedRoutine database
-            }
+            public void onClick(View view) {/*
+                String cleanser = "cleanser1";
+                HashMap<String,Object> result = new HashMap<>();
+                String data = bundle.getString("key");
+                System.out.println(data);
+
+
+
+                switch (bundle.getString("key")){
+                    case "night":
+                        System.out.println("dddd");
+                        result.put("nightCleanser",cleanser);
+                        break;
+                    case "morning":
+                        System.out.println("eeeeee");
+                        result.put("morningCleanser",cleanser);
+                        break;
+                }
+
+
+                databaseReference.child(user.getUid()).updateChildren(result)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                //updated so dismiss progress
+
+                                Toast.makeText(getActivity(),"Updated",Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                //failed show error
+
+                                Toast.makeText(getActivity(),""+e.getMessage(),Toast.LENGTH_SHORT).show();
+
+                            }
+                        });
+            */}
         });
 
         cleanser2.setOnClickListener(new View.OnClickListener() {

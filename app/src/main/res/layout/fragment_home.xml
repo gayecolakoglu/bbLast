@@ -6,22 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.HomeFragment">
 
-    <Spinner
+    <TextView
         android:id="@+id/spinner_SkinSubType_in_HomeFragment"
         android:layout_width="264dp"
         android:layout_height="48dp"
         android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
         android:text="Select Your Skin Subtype"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@id/btnSave_in_HomeFragment"
+        app:layout_constraintBottom_toTopOf="@id/homeFragment_frameLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtSkinSubType" />
 
-    <Spinner
+    <TextView
         android:id="@+id/spinner_SkinType_in_HomeFragment"
         android:layout_width="264dp"
         android:layout_height="48dp"
         android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
         android:text="Select Your Skin Type"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@id/txtSkinSubType"
@@ -35,7 +37,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnSave_in_HomeFragment"
+        app:layout_constraintTop_toBottomOf="@id/spinner_SkinSubType_in_HomeFragment"
         app:layout_constraintVertical_weight="9">
 
 
@@ -79,17 +81,8 @@
         app:layout_constraintBottom_toTopOf="@id/spinner_SkinSubType_in_HomeFragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtSkinType" />
+        app:layout_constraintTop_toBottomOf="@id/spinner_SkinType_in_HomeFragment" />
 
-    <Button
-        android:id="@+id/btnSave_in_HomeFragment"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="Save Changes"
-        app:layout_constraintBottom_toTopOf="@id/homeFragment_frameLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinner_SkinSubType_in_HomeFragment" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

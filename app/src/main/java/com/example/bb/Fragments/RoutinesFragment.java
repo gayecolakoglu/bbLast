@@ -40,13 +40,28 @@ public class RoutinesFragment extends Fragment {
         morning.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                replaceFragment(new MorningFragment());
+                Bundle bundle = new Bundle();
+                bundle.putString("key","morning".toString());
+
+                MorningFragment newFragment = new MorningFragment();
+                newFragment.setArguments(bundle);
+
+                // set opening fragments to the IngredientsFragment
+                getFragmentManager().beginTransaction().replace(R.id.routines_frameLayout,newFragment).commit();
             }
         });
         night.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                replaceFragment(new NightFragment());
+                Bundle bundle = new Bundle();
+                bundle.putString("key","night".toString());
+
+                NightFragment newFragment = new NightFragment();
+                newFragment.setArguments(bundle);
+
+                // set opening fragments to the IngredientsFragment
+                getFragmentManager().beginTransaction().replace(R.id.routines_frameLayout,newFragment).commit();
+
             }
         });
 
