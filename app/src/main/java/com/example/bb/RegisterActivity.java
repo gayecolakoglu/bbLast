@@ -58,6 +58,36 @@ public class RegisterActivity extends AppCompatActivity{
         storageReference = firebaseStorage.getReference();
         firebaseFirestore = FirebaseFirestore.getInstance();
 
+        //thread for timing
+        Toast toast;
+        Thread thread;
+
+        toast = Toast.makeText(this, "Thanks for joining us!", Toast.LENGTH_SHORT);
+        thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i=0; i<1000; i++){
+                    try {
+                        Thread.sleep(1000);
+                        toast.show();
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+        thread.start();
+
+
+
+
+
+
+
+
+
+
 
 
         // change activity to SignIn acivity if button clicked
