@@ -28,3 +28,12 @@ include users informations and their routine, products and their ingiredients.
  #### USE-CASE DIAGRAM
  
 ![image](https://user-images.githubusercontent.com/55553433/152352418-2f904f9a-b8aa-45f0-bf91-7c5006b3cfdb.png)
+
+
+#### UI Mockups
+
+![image](https://user-images.githubusercontent.com/55553433/152352664-a4208d7f-dc4a-4616-9bd1-1db6c5f76ed7.png) ![image](https://user-images.githubusercontent.com/55553433/152352724-c461e6a8-ffde-49d5-b11a-79323b426e0a.png) ![image](https://user-images.githubusercontent.com/55553433/152352796-f97e4476-4447-4db8-b368-0746fb75e69b.png) ![image](https://user-images.githubusercontent.com/55553433/152352919-131559ae-603a-43e9-803e-e9221d9d407c.png) ![image](https://user-images.githubusercontent.com/55553433/152352969-1385b309-abe8-4cb8-a696-a008b4f198db.png)
+
+
+
+
