@@ -5,12 +5,15 @@
   
   • Gaye Çolakoğlu (180709059)
 
+
 #### PROJECT TOPIC
   Application that provides a personalized skin care routine.
+
 
 #### DESCRIPTION
   Users select their skin type and then the app provide a skin care routine with skin care stuffs that for their skin type. Moreover users are informed about products ingiredients. The end of the this project, this app are going to 
 include users informations and their routine, products and their ingiredients.
+
 
 #### SCENERIO
   1. Sally Jones signed up, in order to use the app.
@@ -21,6 +24,7 @@ include users informations and their routine, products and their ingiredients.
   6. Sally reads product guide for the purpose of examine products ingiredients. 
   7. Sally clickes specific products that in her routine, reads other users’ comments and write her comments about the product
   
+  
  #### USE-CASE DIAGRAM
  
- 
+![image](https://user-images.githubusercontent.com/55553433/152352418-2f904f9a-b8aa-45f0-bf91-7c5006b3cfdb.png)
