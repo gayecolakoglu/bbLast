@@ -1,6 +1,8 @@
 # bbLast
-## TEAM MEMBERS
+
+#### TEAM MEMBERS
   • Rozerin Yıldız (180709040)
+  
   • Gaye Çolakoğlu (180709059)
 
 #### PROJECT TOPIC
