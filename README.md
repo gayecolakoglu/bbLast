@@ -32,14 +32,16 @@ include users informations and their routine, products and their ingiredients.
 
 #### UI Mockups
 
-![image](https://user-images.githubusercontent.com/55553433/152352664-a4208d7f-dc4a-4616-9bd1-1db6c5f76ed7.png)  
-![image](https://userimages.githubusercontent.com/55553433/152352724-c461e6a8-ffde-49d5-b11a-79323b426e0a.png)  
+![image](https://user-images.githubusercontent.com/55553433/152354633-19b2475e-a77f-42e4-af57-8c4c82ed402a.png) ![image](https://user-images.githubusercontent.com/55553433/152354689-977e6086-c8d6-4fe4-a4fa-b57e701c8e2f.png)
 
-![image](https://user-images.githubusercontent.com/55553433/152353364-e33e6db7-8b9d-4a72-b8aa-1fb0a48adc67.png)  
-![image](https://userimages.githubusercontent.com/55553433/152352796-f97e4476-4447-4db8-b368-0746fb75e69b.png) 
+![image](https://user-images.githubusercontent.com/55553433/152354760-ea739789-2e9a-4dba-9f99-c1e68915e604.png) ![image](https://user-images.githubusercontent.com/55553433/152354826-1cfad6c1-77ce-43c2-a51a-36deb428ed8d.png)
 
-![image](https://user-images.githubusercontent.com/55553433/152352919-131559ae-603a-43e9-803e-e9221d9d407c.png) 
-![image](https://userimages.githubusercontent.com/55553433/152352969-1385b309-abe8-4cb8-a696-a008b4f198db.png)
+![image](https://user-images.githubusercontent.com/55553433/152354885-0546141e-87b3-4779-961a-13b2d03e2ea7.png) ![image](https://user-images.githubusercontent.com/55553433/152354922-82636084-868b-4aef-907a-cc7d70cfdef6.png)
+
+
+
+
+
 
 
 
