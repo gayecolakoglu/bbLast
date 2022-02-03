@@ -1,10 +1,9 @@
 # bbLast
 
 #### TEAM MEMBERS
-  • Rozerin Yıldız (180709040)
+  • [Rozerin Yıldız](https://github.com/rozerinyildiz)
   
-  • Gaye Çolakoğlu (180709059)
-
+  • [Gaye Çolakoğlu](https://github.com/gayecolakoglu)
 
 #### PROJECT TOPIC
   Application that provides a personalized skin care routine.
